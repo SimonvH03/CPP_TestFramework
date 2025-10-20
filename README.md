@@ -11,8 +11,7 @@ To comply with 42 CPP Module requirements, each exercise must compile with a Mak
 ```
 #include "TestRunner.hpp"
 
-int	main(void)
-{
+int	main(void) {
 	TestRunner::get().runAllTests();
 	return 0;
 }
