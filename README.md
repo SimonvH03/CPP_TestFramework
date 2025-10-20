@@ -36,7 +36,7 @@ Per the 42 Norm about Makefiles (yes, it still applies to C++) you must compile 
 Tests will only compile with std=c++20 and up. You can opt to compile your subject as an archive in an earlier c++ standard.
 
 # ValidationTools
-I'm still discovering what tools could be helpful for validating the workings of a class. I noticed a lot of Modules require validation by printing to stdout, I haven't looked into how to cleanly validate behaviour of this kind. If you have any ideas for useful validation tools, please do not hesitate to contribute to this repository.
+I'm still discovering what tools could be helpful for validating most of the exercises. I noticed a lot of Modules require validation by printing to stdout, I haven't looked into how to cleanly validate behaviour of this kind yet. If you have any ideas for useful validation tools, please do not hesitate to contribute to this repository.
 
 Currently the available tools are:
 - CHECK(expression)
