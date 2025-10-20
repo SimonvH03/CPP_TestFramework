@@ -1,31 +1,27 @@
-# Make sure to adjust the CXXFLAGS, LIB_TF_DIR, SUBJECT_SRC to suit your exercise!
 MAKEFLAGS	=	-r -R
 
 CXX			=	c++
-# CXXFLAGS	=	-std=c++20
-CXXFLAGS	+=	-MMD -MP
+CXXFLAGS	=	-MMD -MP -std=c++20
 CXXFLAGS	+=	-Wall -Werror -Wextra -Wshadow
-# CXXFLAGS	+=	-D VERBOSE
 
-NAME		=	run
+NAME		=	runTests
 
-# LIB_TF_DIR	=	TestFramework
+LIB_TF_DIR	=	../../TestFramework
 LIB_TF_BIN	:=	$(LIB_TF_DIR)/libTestRunner.a
 LIB_TF_INC	:=	$(LIB_TF_DIR)/include
 
-INCLUDE_DIRS=	$(TEST_DIR) \
-				$(SUBJECT_DIR) \
+INCLUDE_DIRS=	$(SUBJECT_DIR) \
 				$(LIB_TF_INC)
 INCLUDE		=	$(addprefix -I , $(INCLUDE_DIRS))
 
-TEST_DIR	=	test
-TEST_SRC	=	main.cpp \
-				tests.cpp
+TEST_SRC	=	main.cpp
 
 SUBJECT_DIR	=	subject
-# SUBJECT_SRC	=	
+SUBJECT_SRC	=	Animal.cpp \
+				Cat.cpp \
+				Dog.cpp
 
-SRC			:=	$(addprefix $(TEST_DIR)/, $(TEST_SRC)) \
+SRC			:=	$(TEST_SRC) \
 				$(addprefix $(SUBJECT_DIR)/, $(SUBJECT_SRC))
 
 OBJ_DIR		=	obj
@@ -42,7 +38,7 @@ $(NAME): $(OBJ) $(LIB_TF_BIN)
 	$(CXX) $(CXXFLAGS) $(OBJ) $(LIB_TF_BIN) -o $(NAME)
 
 $(LIB_TF_BIN):
-	$(MAKE) -C $(LIB_TF_DIR)
+	$(MAKE) -C $(LIB_TF_DIR) -s
 
 -include $(DEP)
 
@@ -52,11 +48,11 @@ clean:
 	else \
 		echo "Warning: OBJ_DIR is undefined"; \
 	fi
-	$(MAKE) -C $(LIB_TF_DIR) fclean
+	$(MAKE) -C $(LIB_TF_DIR) fclean -s
 
 fclean: clean
 	rm -f $(NAME)
-# 	rm -f failLog.txt
+	rm -f failLog.txt
 
 re: clean all
 

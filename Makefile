@@ -1,15 +1,13 @@
 MAKEFLAGS	=	-r -R
 
 CXX			=	c++
-CXXFLAGS	=	-std=c++20
-CXXFLAGS	+=	-MMD -MP
+CXXFLAGS	=	-MMD -MP -std=c++20
 CXXFLAGS	+=	-Wall -Werror -Wextra -Wshadow
 # CXXFLAGS	+=	-D VERBOSE
 
 NAME		=	libTestRunner.a
 
-INCLUDE_DIRS=	./include \
-				$(SRC_DIR)
+INCLUDE_DIRS=	./include
 INCLUDE		=	$(addprefix -I , $(INCLUDE_DIRS))
 
 SRC_DIR		=	src
