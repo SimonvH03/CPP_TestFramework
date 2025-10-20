@@ -40,11 +40,14 @@ I'm still discovering what tools could be helpful for validating the workings of
 
 Currently the available tools are:
 - CHECK(expression)
-	- fails when the expression evaluates to boolean false.
-	- can take any boolean expression, will log expression as string.
+	- can take any boolean expression
+	- fails when the expression evaluates to false
+	- will log expression as a string
 - EQUATE(object A, object B)
+	- can take any std::two equality_comparible_with<> object types
 	- fails when object A and B are not equal according to A::operator==(B const&)
-	- can take any two equality_comparible_with objects, will attempt to log the value of each parameter.
+ 	- will log each parameter as a string
+    - will attempt to log the _value_ of each parameter as a string
 
 
 A working example of the Compilation, File tree, and Test writing is provided.
