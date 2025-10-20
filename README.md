@@ -20,6 +20,7 @@ int	main(void)
 ```
 #include "TestCreation.hpp"
 #include "ValidationTools.hpp" (optional)
+#include "yourClass.hpp" (optional)
 
 TEST(<test name>) {
 	// test body
