@@ -15,7 +15,8 @@ TestCase::~TestCase()
 #endif
 }
 
-std::string const	&TestCase::getName() const
+std::string const	&TestCase::getName()
+const
 {
 	return (_name);
 }
