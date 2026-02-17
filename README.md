@@ -31,7 +31,7 @@ TEST(<test name>)
 
 ### Compilation
 The included Makefile will compile the TestRunner into an archive (library) of c++ object files.
-Per the 42 Norm about Makefiles (yes, it still applies to C++) you must compile libraries by calling their respective Makefile in your Makefile. I suggest using '$(MAKE) -C <lib_directory>'. You can then simply add the archive to your Executable rule's dependencies and compilation as if it were an object file (because it is a bunch of object files).
+Per the 42 Norm about Makefiles (yes, it still applies to C++) you must compile libraries by calling their respective Makefile in your exercise's Makefile. I suggest using '$(MAKE) -C <lib_directory>'. You can then simply add the archive to your Executable rule's dependencies and compilation as if it were an object file (because it is a bunch of object files).
 
 Tests will only compile with std=c++20 and up. You can opt to compile your subject as an archive in an earlier c++ standard.
 
