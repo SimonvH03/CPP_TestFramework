@@ -5,7 +5,7 @@ A compact C++ Test framework to simplify writing tests for the 42 CPP Modules.
 This tool aids fast test creation, execution and logging. The main focus is to save time, and simplify writing tests.
 
 ### Compliance
-To comply with 42 CPP Module requirements, each exercise must compile with a Makefile and main.cpp inside the Turn-in directory, and "there must be at least a main.cpp file with tests provided". Make sure you do not overlook this.
+To comply with 42 CPP Module requirements, each exercise must compile with a Makefile and main.cpp inside the Turn-in directory, and "there must be at least a main.cpp file with tests provided". Make sure you do not overlook this when using the tool yourself.
 
 # Usage
 ```
