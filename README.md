@@ -33,7 +33,7 @@ TEST(<test name>)
 The included Makefile will compile the TestRunner into an archive (library) of c++ object files.
 Per the 42 Norm about Makefiles (yes, it still applies to C++) you must compile libraries by calling their respective Makefile in your exercise's Makefile. I suggest using '$(MAKE) -C <lib_directory>'. You can then simply add the archive to your Executable rule's dependencies and compilation as if it were an object file (because it is a bunch of object files).
 
-Tests will only compile with std=c++20 and up. You can opt to compile your subject as an archive in an earlier c++ standard.
+Tests will only compile with std=c++20 and up. You can opt to compile your subject as an archive in an earlier c++ standard. This is because this tool relies on pre-processor statements to define each test case. I opted for this method over runtime definition because it seemed neater.
 
 # ValidationTools
 I'm still discovering what tools could be helpful for validating most of the exercises. I noticed a lot of Modules require validation by printing to stdout, I haven't looked into how to cleanly validate behaviour of this kind yet. If you have any ideas for useful validation tools, please do not hesitate to contribute to this repository.
